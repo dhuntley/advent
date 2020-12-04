@@ -22,6 +22,10 @@ public class Utilities {
         return lines;
     }
 
+    public static List<String> readLineList() {
+        return readLineStream().collect(Collectors.toList());
+    }
+
     public static Stream<Integer> readIntegerStream() {
         return readLineStream().filter(line -> line != null && !"".equals(line)).map(line -> new Integer(line));
     }
