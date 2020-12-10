@@ -26,6 +26,14 @@ public class Utilities {
         return readLineStream().collect(Collectors.toList());
     }
 
+    public static Stream<Long> readLongStream() {
+        return readLineStream().filter(line -> line != null && !"".equals(line)).map(line -> new Long(line));
+    }
+
+    public static List<Long> readLongList() {
+        return readLongStream().collect(Collectors.toList());
+    }
+
     public static Stream<Integer> readIntegerStream() {
         return readLineStream().filter(line -> line != null && !"".equals(line)).map(line -> new Integer(line));
     }
